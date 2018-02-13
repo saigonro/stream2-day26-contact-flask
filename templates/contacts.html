@@ -10,9 +10,9 @@
     
     <ul>
         {% for c in data %}
-        <li><h3>{{ c.name_contact }}</h3><br>{{ c.name }}<br>{{ c.email }}<br>{{ c.phone }}</li>
+        <li><br>{{ c.name }}<br>{{ c.email }}<br>{{ c.phone }}</li>
         <form method="POST" action="/delete">
-            <input type="hidden" name="contact_to_delete" value="{{ c.name }}"> 
+            <input type="hidden" name="contact_to_delete" value="{{ c.id }}"> 
             <input type="submit" value="delete">
         </form><hr>
     {% endfor %}
@@ -20,8 +20,6 @@
     
     <h2>Add a contact</h2>
     <form method="POST">
-        <label for="name_contact">Name of Contact</label>
-        <input type="text" name="name_contact"/>
         <label for="name">Name</label>
         <input type="text" name="name"/>
         <label for="email">Email</label>
